@@ -100,7 +100,11 @@
 
     .nav {
       display: flex;
+      flex: 1 1 auto;
+      justify-content: flex-end;
       gap: .35rem;
+      min-width: 0;
+      max-width: 100%;
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -455,6 +459,274 @@
       color: var(--muted);
     }
 
+    .archive-section {
+      margin-top: clamp(2.4rem, 6vw, 4.5rem);
+      padding-top: clamp(1.8rem, 4vw, 3rem);
+      border-top: 1px solid var(--line);
+    }
+
+    .archive-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .archive-heading h3,
+    .album-head h4,
+    .file-browser h4 {
+      margin: 0;
+    }
+
+    .archive-heading p {
+      max-width: 48rem;
+      margin: .4rem 0 0;
+      color: var(--muted);
+    }
+
+    .archive-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: .5rem;
+      flex: 0 0 auto;
+    }
+
+    .archive-stats span,
+    .album-count {
+      padding: .38rem .58rem;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .album {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .album.wide {
+      grid-column: 1 / -1;
+    }
+
+    .album-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .8rem;
+      padding: .9rem 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .album-stage {
+      position: relative;
+      background: #10201c;
+    }
+
+    .album-stage-button {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: zoom-in;
+    }
+
+    .album-stage img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: contain;
+    }
+
+    .album-toolbar {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem .75rem;
+      background: #10201c;
+      color: #fff;
+    }
+
+    .album-icon-button {
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, .3);
+      border-radius: 7px;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+      font-size: 1rem;
+    }
+
+    .album-icon-button:hover,
+    .album-icon-button:focus-visible {
+      background: rgba(255, 255, 255, .12);
+      outline: none;
+    }
+
+    .album-icon-button:disabled {
+      cursor: default;
+      opacity: .35;
+    }
+
+    .album-position {
+      min-width: 4.4rem;
+      margin-left: auto;
+      text-align: right;
+      font-size: .86rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .album-caption {
+      flex: 1 1 auto;
+      overflow: hidden;
+      color: rgba(255, 255, 255, .84);
+      font-size: .9rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .album-thumbnails {
+      display: flex;
+      gap: .5rem;
+      overflow-x: auto;
+      padding: .7rem;
+      scrollbar-width: thin;
+    }
+
+    .album-thumb {
+      flex: 0 0 84px;
+      width: 84px;
+      padding: 0;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      background: transparent;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .album-thumb[aria-current="true"] {
+      border-color: var(--sky);
+    }
+
+    .album-thumb img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .file-browser {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .file-browser-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: .8rem;
+    }
+
+    .file-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .55rem;
+    }
+
+    .file-item {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: .75rem;
+      min-width: 0;
+      padding: .75rem;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fbfcfb;
+    }
+
+    .file-type {
+      min-width: 48px;
+      padding: .3rem .4rem;
+      border-radius: 5px;
+      background: var(--leaf-2);
+      color: #fff;
+      text-align: center;
+      font-size: .72rem;
+      font-weight: 900;
+    }
+
+    .file-copy {
+      min-width: 0;
+    }
+
+    .file-copy strong,
+    .file-copy small {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .file-copy strong {
+      font-size: .91rem;
+    }
+
+    .file-copy small {
+      margin-top: .15rem;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+
+    .file-actions {
+      display: flex;
+      gap: .35rem;
+    }
+
+    .file-link {
+      padding: .42rem .55rem;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--leaf-2);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .file-link:hover,
+    .file-link:focus-visible {
+      border-color: var(--sky);
+      background: #eef7fa;
+      outline: none;
+    }
+
+    .video-library {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
     .quote-band {
       margin-top: 1.2rem;
       padding: clamp(1.2rem, 3vw, 2rem);
@@ -587,6 +859,11 @@
         gap: .55rem;
       }
 
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
       .report-grid,
       .process-line {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -594,8 +871,14 @@
 
       .chapter-head,
       .evidence-grid,
-      .closing-grid {
+      .closing-grid,
+      .album-grid,
+      .file-list {
         grid-template-columns: 1fr;
+      }
+
+      .album.wide {
+        grid-column: auto;
       }
 
       .feature-media {
@@ -616,8 +899,27 @@
       .report-grid,
       .process-line,
       .gallery,
-      .two-col {
+      .two-col,
+      .video-library {
         grid-template-columns: 1fr;
+      }
+
+      .archive-heading,
+      .file-browser-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .archive-stats {
+        justify-content: flex-start;
+      }
+
+      .file-item {
+        grid-template-columns: auto minmax(0, 1fr);
+      }
+
+      .file-actions {
+        grid-column: 1 / -1;
       }
 
       .report-card {
@@ -749,32 +1051,96 @@
                 <p>照片、學習紀錄與活動成果能幫助教師回看學生理解狀況，再調整下一次教學設計。</p>
               </article>
             </div>
-            <div class="gallery" aria-label="素養導向備課與教學照片">
-              <button class="gallery-button" type="button" data-full="assets/prep-record.jpg" data-title="備課社群簽到與紀錄">
-                <img src="assets/prep-record.jpg" alt="自然領域備課社群簽到表" loading="lazy">
-                <span>備課社群簽到與紀錄</span>
-              </button>
-              <button class="gallery-button" type="button" data-full="assets/heat-team.jpg" data-title="物體受熱膨脹實驗操作">
-                <img src="assets/heat-team.jpg" alt="學生分組進行物體受熱膨脹實驗" loading="lazy">
-                <span>分組觀察與實驗操作</span>
-              </button>
-              <button class="gallery-button" type="button" data-full="assets/science-plane.jpg" data-title="科展紙飛機實驗">
-                <img src="assets/science-plane.jpg" alt="學生展示紙飛機科展實驗作品" loading="lazy">
-                <span>科展實驗與作品測試</span>
-              </button>
-              <button class="gallery-button" type="button" data-full="assets/garden-team.jpg" data-title="種菜觀察實作">
-                <img src="assets/garden-team.jpg" alt="學生在校園菜圃旁進行觀察" loading="lazy">
-                <span>校園種菜觀察實作</span>
-              </button>
-              <button class="gallery-button" type="button" data-full="assets/garden-detail.jpg" data-title="植物生長細節觀察">
-                <img src="assets/garden-detail.jpg" alt="校園植物與花朵特寫" loading="lazy">
-                <span>植物生長細節紀錄</span>
-              </button>
-              <button class="gallery-button" type="button" data-full="assets/garden-tablet.jpg" data-title="平板輔助觀察紀錄">
-                <img src="assets/garden-tablet.jpg" alt="學生用平板輔助植物觀察" loading="lazy">
-                <span>平板輔助觀察與紀錄</span>
-              </button>
+          </div>
+        </div>
+
+        <div class="archive-section" id="chapter-1-archive">
+          <div class="archive-heading">
+            <div>
+              <h3>素養導向備課完整資料</h3>
+              <p>可逐張切換或自動播放全部實作照片；備課紀錄可線上預覽，也能下載 Word 原檔。</p>
             </div>
+            <div class="archive-stats" aria-label="資料數量">
+              <span>32 張照片</span>
+              <span>9 份備課文件</span>
+            </div>
+          </div>
+
+          <section class="file-browser" aria-labelledby="records-title">
+            <div class="file-browser-head">
+              <h4 id="records-title">114 學年度領域備課紀錄</h4>
+              <span class="album-count">上學期 5 份・下學期 4 份</span>
+            </div>
+            <div class="file-list">
+              <article class="file-item">
+                <span class="file-type">DOC</span>
+                <span class="file-copy"><strong>期中期末成果報告格式</strong><small>114 上學期</small></span>
+                <span class="file-actions"><a class="file-link office-preview" href="assets/library/ch1/records/semester-1/114領域期中期末成果報告格式(自然領域).doc" target="_blank" rel="noopener">預覽</a><a class="file-link" href="assets/library/ch1/records/semester-1/114領域期中期末成果報告格式(自然領域).doc" download>下載</a></span>
+              </article>
+              <article class="file-item">
+                <span class="file-type">DOCX</span>
+                <span class="file-copy"><strong>2025.10.29 備課社群紀錄</strong><small>含簽到資料</small></span>
+                <span class="file-actions"><a class="file-link office-preview" href="assets/library/ch1/records/semester-1/2025.10.29自然領域備課社群記錄及簽到表.docx" target="_blank" rel="noopener">預覽</a><a class="file-link" href="assets/library/ch1/records/semester-1/2025.10.29自然領域備課社群記錄及簽到表.docx" download>下載</a></span>
+              </article>
+              <article class="file-item">
+                <span class="file-type">DOCX</span>
+                <span class="file-copy"><strong>2025.11.26 備課社群紀錄</strong><small>含簽到資料</small></span>
+                <span class="file-actions"><a class="file-link office-preview" href="assets/library/ch1/records/semester-1/2025.11.26自然領域備課社群記錄及簽到表.docx" target="_blank" rel="noopener">預覽</a><a class="file-link" href="assets/library/ch1/records/semester-1/2025.11.26自然領域備課社群記錄及簽到表.docx" download>下載</a></span>
+              </article>
+              <article class="file-item">
+                <span class="file-type">DOCX</span>
+                <span class="file-copy"><strong>2025.12.17 備課社群紀錄</strong><small>含簽到資料</small></span>
+                <span class="file-actions"><a class="file-link office-preview" href="assets/library/ch1/records/semester-1/2025.12.17自然領域備課社群記錄及簽到表.docx" target="_blank" rel="noopener">預覽</a><a class="file-link" href="assets/library/ch1/records/semester-1/2025.12.17自然領域備課社群記錄及簽到表.docx" download>下載</a></span>
+              </article>
+              <article class="file-item">
+                <span class="file-type">DOCX</span>
+                <span class="file-copy"><strong>2025.12.31 備課社群紀錄</strong><small>含簽到資料</small></span>
+                <span class="file-actions"><a class="file-link office-preview" href="assets/library/ch1/records/semester-1/2025.12.31自然領域備課社群記錄及簽到表.docx" target="_blank" rel="noopener">預覽</a><a class="file-link" href="assets/library/ch1/records/semester-1/2025.12.31自然領域備課社群記錄及簽到表.docx" download>下載</a></span>
+              </article>
+              <article class="file-item">
+                <span class="file-type">DOC</span>
+                <span class="file-copy"><strong>期末成果報告格式</strong><small>114 下學期</small></span>
+                <span class="file-actions"><a class="file-link office-preview" href="assets/library/ch1/records/semester-2/114領域期末成果報告格式(自然領域).doc" target="_blank" rel="noopener">預覽</a><a class="file-link" href="assets/library/ch1/records/semester-2/114領域期末成果報告格式(自然領域).doc" download>下載</a></span>
+              </article>
+              <article class="file-item">
+                <span class="file-type">DOCX</span>
+                <span class="file-copy"><strong>2026.04.01 備課社群紀錄</strong><small>另附簽到表照片</small></span>
+                <span class="file-actions"><a class="file-link office-preview" href="assets/library/ch1/records/semester-2/2026.04.01自然領域備課社群記錄及簽到表.docx" target="_blank" rel="noopener">預覽</a><a class="file-link" href="assets/library/ch1/records/semester-2/2026.04.01自然領域備課社群記錄及簽到表.docx" download>下載</a></span>
+              </article>
+              <article class="file-item">
+                <span class="file-type">DOCX</span>
+                <span class="file-copy"><strong>2026.04.29 備課社群紀錄</strong><small>另附簽到表照片</small></span>
+                <span class="file-actions"><a class="file-link office-preview" href="assets/library/ch1/records/semester-2/2026.04.29自然領域備課社群記錄及簽到表.docx" target="_blank" rel="noopener">預覽</a><a class="file-link" href="assets/library/ch1/records/semester-2/2026.04.29自然領域備課社群記錄及簽到表.docx" download>下載</a></span>
+              </article>
+              <article class="file-item">
+                <span class="file-type">DOCX</span>
+                <span class="file-copy"><strong>2026.06.03 備課社群紀錄</strong><small>另附簽到表照片</small></span>
+                <span class="file-actions"><a class="file-link office-preview" href="assets/library/ch1/records/semester-2/2026.06.03自然領域備課社群記錄及簽到表.docx" target="_blank" rel="noopener">預覽</a><a class="file-link" href="assets/library/ch1/records/semester-2/2026.06.03自然領域備課社群記錄及簽到表.docx" download>下載</a></span>
+              </article>
+            </div>
+          </section>
+
+          <div class="album-grid">
+            <article class="album" data-album="records">
+              <header class="album-head"><h4>備課簽到紀錄</h4><span class="album-count">3 張</span></header>
+              <div class="album-stage"><button class="album-stage-button" type="button" aria-label="放大目前照片"><img src="assets/library/ch1/records/semester-2/2026.04.01簽到表.jpg" alt="2026.04.01 自然領域備課簽到表"></button><div class="album-toolbar"><button class="album-icon-button" type="button" data-album-action="prev" aria-label="上一張" title="上一張">‹</button><button class="album-icon-button" type="button" data-album-action="play" aria-label="播放相簿" title="播放相簿">▶</button><button class="album-icon-button" type="button" data-album-action="next" aria-label="下一張" title="下一張">›</button><span class="album-caption">2026.04.01 簽到表</span><span class="album-position">1 / 3</span></div></div>
+              <div class="album-thumbnails" aria-label="備課簽到紀錄縮圖"></div>
+            </article>
+            <article class="album" data-album="thermal">
+              <header class="album-head"><h4>物體受熱膨脹實驗</h4><span class="album-count">11 張</span></header>
+              <div class="album-stage"><button class="album-stage-button" type="button" aria-label="放大目前照片"><img src="assets/library/ch1/thermal/453046_0.jpg" alt="物體受熱膨脹實驗照片 1"></button><div class="album-toolbar"><button class="album-icon-button" type="button" data-album-action="prev" aria-label="上一張" title="上一張">‹</button><button class="album-icon-button" type="button" data-album-action="play" aria-label="播放相簿" title="播放相簿">▶</button><button class="album-icon-button" type="button" data-album-action="next" aria-label="下一張" title="下一張">›</button><span class="album-caption">物體受熱膨脹實驗 01</span><span class="album-position">1 / 11</span></div></div>
+              <div class="album-thumbnails" aria-label="物體受熱膨脹實驗縮圖"></div>
+            </article>
+            <article class="album" data-album="science-fair">
+              <header class="album-head"><h4>科展實驗</h4><span class="album-count">10 張</span></header>
+              <div class="album-stage"><button class="album-stage-button" type="button" aria-label="放大目前照片"><img src="assets/library/ch1/science-fair/453040_0.jpg" alt="科展實驗照片 1"></button><div class="album-toolbar"><button class="album-icon-button" type="button" data-album-action="prev" aria-label="上一張" title="上一張">‹</button><button class="album-icon-button" type="button" data-album-action="play" aria-label="播放相簿" title="播放相簿">▶</button><button class="album-icon-button" type="button" data-album-action="next" aria-label="下一張" title="下一張">›</button><span class="album-caption">科展實驗 01</span><span class="album-position">1 / 10</span></div></div>
+              <div class="album-thumbnails" aria-label="科展實驗縮圖"></div>
+            </article>
+            <article class="album" data-album="garden">
+              <header class="album-head"><h4>觀察實作與種菜</h4><span class="album-count">8 張</span></header>
+              <div class="album-stage"><button class="album-stage-button" type="button" aria-label="放大目前照片"><img src="assets/library/ch1/garden/20220114_101330.jpg" alt="校園種菜觀察照片 1"></button><div class="album-toolbar"><button class="album-icon-button" type="button" data-album-action="prev" aria-label="上一張" title="上一張">‹</button><button class="album-icon-button" type="button" data-album-action="play" aria-label="播放相簿" title="播放相簿">▶</button><button class="album-icon-button" type="button" data-album-action="next" aria-label="下一張" title="下一張">›</button><span class="album-caption">種菜觀察 01</span><span class="album-position">1 / 8</span></div></div>
+              <div class="album-thumbnails" aria-label="觀察實作與種菜縮圖"></div>
+            </article>
           </div>
         </div>
       </div>
@@ -807,32 +1173,44 @@
                 <p>課堂實作先讓學生熟悉材料與發射方式，再進入全體競賽，學生能看見設計差異帶來的效果。</p>
               </article>
             </div>
-            <div class="two-col" aria-label="科學趣味競賽照片與影片">
+            <div class="video-library" aria-label="科學趣味競賽影片">
               <article class="media-panel">
-                <video controls preload="metadata" poster="assets/class-practice.jpg">
-                  <source src="assets/practice.mp4" type="video/mp4">
+                <video controls preload="metadata" playsinline poster="assets/library/ch2/practice/132990.jpg">
+                  <source src="assets/library/ch2/practice/6d1d11ea-1944-4f36-95ef-c9882f2b6887.mp4" type="video/mp4">
                   你的瀏覽器不支援影片播放。
                 </video>
                 <p class="caption">課堂實作與練習</p>
               </article>
               <article class="media-panel">
-                <video controls preload="metadata" poster="assets/competition-launch.jpg">
-                  <source src="assets/competition.mp4" type="video/mp4">
+                <video controls preload="metadata" playsinline poster="assets/library/ch2/competition/73433(1).jpg">
+                  <source src="assets/library/ch2/competition/8c07c2a9-88b4-4265-be30-e0f3286d62a1.mp4" type="video/mp4">
                   你的瀏覽器不支援影片播放。
                 </video>
                 <p class="caption">科學趣味競賽舉辦現場</p>
               </article>
-              <button class="gallery-button" type="button" data-full="assets/competition-launch.jpg" data-title="投石器競賽發射現場">
-                <img src="assets/competition-launch.jpg" alt="學生操作投石器進行競賽" loading="lazy">
-                <span>學生操作投石器</span>
-              </button>
-              <button class="gallery-button" type="button" data-full="assets/competition-crowd.jpg" data-title="年級共同參與趣味競賽">
-                <img src="assets/competition-crowd.jpg" alt="學生在體育館集合參與科學趣味競賽" loading="lazy">
-                <span>年級共同參與活動</span>
-              </button>
             </div>
-            <div class="quote-band">素養指人在適應現在生活和面對未來挑戰時，所應具備的知識、能力和態度。投石器競賽把這句話放進學生能動手驗證的情境。</div>
           </div>
+        </div>
+
+        <div class="archive-section" id="chapter-2-archive">
+          <div class="archive-heading">
+            <div>
+              <h3>科學趣味競賽完整影像</h3>
+              <p>兩段活動影片可直接播放，全部課堂與競賽照片則可切換、放大或自動輪播。</p>
+            </div>
+            <div class="archive-stats" aria-label="資料數量">
+              <span>6 張照片</span>
+              <span>2 段影片</span>
+            </div>
+          </div>
+          <div class="album-grid">
+            <article class="album wide" data-album="competition">
+              <header class="album-head"><h4>從課堂練習到競賽現場</h4><span class="album-count">6 張</span></header>
+              <div class="album-stage"><button class="album-stage-button" type="button" aria-label="放大目前照片"><img src="assets/library/ch2/practice/132990.jpg" alt="學生在課堂進行投石器實作與練習"></button><div class="album-toolbar"><button class="album-icon-button" type="button" data-album-action="prev" aria-label="上一張" title="上一張">‹</button><button class="album-icon-button" type="button" data-album-action="play" aria-label="播放相簿" title="播放相簿">▶</button><button class="album-icon-button" type="button" data-album-action="next" aria-label="下一張" title="下一張">›</button><span class="album-caption">課堂實作與練習</span><span class="album-position">1 / 6</span></div></div>
+              <div class="album-thumbnails" aria-label="科學趣味競賽完整縮圖"></div>
+            </article>
+          </div>
+          <div class="quote-band">素養指人在適應現在生活和面對未來挑戰時，所應具備的知識、能力和態度。投石器競賽把這句話放進學生能動手驗證的情境。</div>
         </div>
       </div>
     </section>
@@ -945,17 +1323,158 @@
     const lightboxTitle = document.querySelector("#lightbox-title");
     const closeButton = document.querySelector(".close-button");
 
+    const openLightbox = (src, title, alt = "") => {
+      lightboxImage.src = src;
+      lightboxImage.alt = alt;
+      lightboxTitle.textContent = title;
+      if (typeof lightbox.showModal === "function") {
+        lightbox.showModal();
+      } else {
+        lightbox.setAttribute("open", "");
+      }
+    };
+
     document.querySelectorAll(".gallery-button").forEach((button) => {
       button.addEventListener("click", () => {
-        lightboxImage.src = button.dataset.full;
-        lightboxImage.alt = button.querySelector("img")?.alt || "";
-        lightboxTitle.textContent = button.dataset.title || "";
-        if (typeof lightbox.showModal === "function") {
-          lightbox.showModal();
-        } else {
-          lightbox.setAttribute("open", "");
-        }
+        openLightbox(
+          button.dataset.full,
+          button.dataset.title || "",
+          button.querySelector("img")?.alt || ""
+        );
       });
+    });
+
+    const numberedAlbum = (base, files, label) => files.map((file, index) => ({
+      src: `${base}/${file}`,
+      title: `${label} ${String(index + 1).padStart(2, "0")}`,
+      alt: `${label}照片 ${index + 1}`
+    }));
+
+    const albumSets = {
+      records: [
+        { src: "assets/library/ch1/records/semester-2/2026.04.01簽到表.jpg", title: "2026.04.01 簽到表", alt: "2026年4月1日自然領域備課簽到表" },
+        { src: "assets/library/ch1/records/semester-2/2026.04.29簽到表.jpg", title: "2026.04.29 簽到表", alt: "2026年4月29日自然領域備課簽到表" },
+        { src: "assets/library/ch1/records/semester-2/2026.06.03簽到表.jpg", title: "2026.06.03 簽到表", alt: "2026年6月3日自然領域備課簽到表" }
+      ],
+      thermal: numberedAlbum(
+        "assets/library/ch1/thermal",
+        ["453046_0.jpg", "S__55836689_0.jpg", "S__55836690_0.jpg", "S__55836691_0.jpg", "S__55836692_0.jpg", "S__55836693_0.jpg", "S__55836694_0.jpg", "S__55836695_0.jpg", "S__55836696_0.jpg", "S__55836697_0.jpg", "S__55836698_0.jpg"],
+        "物體受熱膨脹實驗"
+      ),
+      "science-fair": numberedAlbum(
+        "assets/library/ch1/science-fair",
+        ["453040_0.jpg", "453041_0.jpg", "453042_0.jpg", "453043_0.jpg", "453044_0.jpg", "453045_0.jpg", "453047_0.jpg", "453048_0.jpg", "453049_0.jpg", "453050.jpg"],
+        "科展實驗"
+      ),
+      garden: numberedAlbum(
+        "assets/library/ch1/garden",
+        ["20220114_101330.jpg", "2026-09-23 123227.jpg", "311906.jpg", "311910_0.jpg", "311911_0.jpg", "S__47906874_0.jpg", "S__47906876_0.jpg", "S__47906884_0.jpg"],
+        "種菜觀察"
+      ),
+      competition: [
+        { src: "assets/library/ch2/practice/132990.jpg", title: "課堂實作與練習", alt: "學生在課堂進行投石器實作與練習" },
+        ...numberedAlbum(
+          "assets/library/ch2/competition",
+          ["73433(1).jpg", "73438_0.jpg", "73439_0.jpg", "73440_0.jpg", "73441_0.jpg"],
+          "科學趣味競賽現場"
+        )
+      ]
+    };
+
+    let activeAlbumStop = null;
+
+    document.querySelectorAll(".album[data-album]").forEach((album) => {
+      const items = albumSets[album.dataset.album] || [];
+      const stageButton = album.querySelector(".album-stage-button");
+      const stageImage = stageButton.querySelector("img");
+      const caption = album.querySelector(".album-caption");
+      const position = album.querySelector(".album-position");
+      const thumbnails = album.querySelector(".album-thumbnails");
+      const previousButton = album.querySelector('[data-album-action="prev"]');
+      const playButton = album.querySelector('[data-album-action="play"]');
+      const nextButton = album.querySelector('[data-album-action="next"]');
+      let index = 0;
+      let timer = null;
+      const thumbButtons = [];
+
+      items.forEach((item, itemIndex) => {
+        const button = document.createElement("button");
+        const image = document.createElement("img");
+        button.className = "album-thumb";
+        button.type = "button";
+        button.setAttribute("aria-label", `顯示${item.title}`);
+        image.src = item.src;
+        image.alt = "";
+        image.loading = "lazy";
+        button.append(image);
+        button.addEventListener("click", () => {
+          index = itemIndex;
+          render();
+        });
+        thumbnails.append(button);
+        thumbButtons.push(button);
+      });
+
+      const render = () => {
+        const item = items[index];
+        if (!item) return;
+        stageImage.src = item.src;
+        stageImage.alt = item.alt;
+        caption.textContent = item.title;
+        position.textContent = `${index + 1} / ${items.length}`;
+        thumbButtons.forEach((button, itemIndex) => {
+          button.setAttribute("aria-current", itemIndex === index ? "true" : "false");
+        });
+      };
+
+      const move = (step) => {
+        index = (index + step + items.length) % items.length;
+        render();
+      };
+
+      const stop = () => {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+        playButton.textContent = "▶";
+        playButton.setAttribute("aria-label", "播放相簿");
+        playButton.title = "播放相簿";
+        if (activeAlbumStop === stop) activeAlbumStop = null;
+      };
+
+      const togglePlayback = () => {
+        if (timer) {
+          stop();
+          return;
+        }
+        if (activeAlbumStop) activeAlbumStop();
+        move(1);
+        timer = window.setInterval(() => move(1), 3200);
+        activeAlbumStop = stop;
+        playButton.textContent = "Ⅱ";
+        playButton.setAttribute("aria-label", "暫停相簿");
+        playButton.title = "暫停相簿";
+      };
+
+      previousButton.addEventListener("click", () => move(-1));
+      nextButton.addEventListener("click", () => move(1));
+      playButton.addEventListener("click", togglePlayback);
+      stageButton.addEventListener("click", () => {
+        const item = items[index];
+        openLightbox(item.src, item.title, item.alt);
+      });
+
+      if (items.length < 2) {
+        previousButton.disabled = true;
+        playButton.disabled = true;
+        nextButton.disabled = true;
+      }
+      render();
+    });
+
+    document.querySelectorAll(".office-preview").forEach((link) => {
+      if (!/^https?:$/.test(window.location.protocol)) return;
+      const sourceUrl = new URL(link.getAttribute("href"), document.baseURI).href;
+      link.href = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(sourceUrl)}`;
     });
 
     const closeLightbox = () => {
