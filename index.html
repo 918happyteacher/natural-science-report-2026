@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026.09.23 自然領域成果分享報告｜陳冠百</title>
+  <meta name="description" content="雙蓮國小 114 學年度自然科領域備課社群成果分享歷程網頁。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f3d33'/%3E%3Cpath d='M17 42c13-2 24-11 30-25 2 15-4 29-19 33-5 1-9-1-11-8Z' fill='%238fcf6f'/%3E%3Cpath d='M24 39c5-6 12-10 22-14' stroke='%23fff7d1' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='20' cy='21' r='6' fill='%23f2c94c'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #17211f;
+      --muted: #5c6661;
+      --paper: #f7f8f4;
+      --surface: #ffffff;
+      --line: #d9ded6;
+      --leaf: #245b47;
+      --leaf-2: #0f3d33;
+      --moss: #8fcf6f;
+      --gold: #f0b84f;
+      --sky: #4e93b5;
+      --coral: #d96d5b;
+      --shadow: 0 18px 46px rgba(22, 33, 31, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif;
+      line-height: 1.7;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: .75rem;
+      z-index: 20;
+      transform: translateY(-150%);
+      background: var(--surface);
+      border: 1px solid var(--ink);
+      padding: .5rem .75rem;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 12;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 64px;
+      padding: .7rem clamp(1rem, 4vw, 3rem);
+      background: rgba(247, 248, 244, .92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      min-width: max-content;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--leaf-2);
+      color: #fff7d1;
+      font-size: 1.05rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: .35rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav a {
+      min-width: max-content;
+      padding: .5rem .75rem;
+      border-bottom: 2px solid transparent;
+      color: var(--muted);
+      font-size: .95rem;
+      text-decoration: none;
+    }
+
+    .nav a:hover,
+    .nav a:focus,
+    .nav a.active {
+      color: var(--leaf-2);
+      border-bottom-color: var(--gold);
+      outline: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 78svh;
+      display: grid;
+      align-items: end;
+      padding: clamp(5rem, 12vw, 9rem) clamp(1.2rem, 5vw, 5rem) clamp(2.8rem, 8vw, 5rem);
+      background:
+        linear-gradient(90deg, rgba(9, 28, 24, .88), rgba(9, 28, 24, .56) 42%, rgba(9, 28, 24, .18)),
+        url("assets/hero-competition.jpg") center / cover;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--moss), var(--gold), var(--sky), var(--coral));
+    }
+
+    .hero-inner {
+      width: min(920px, 100%);
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      margin: 0 0 .75rem;
+      color: #fff7d1;
+      font-size: clamp(.92rem, 1.5vw, 1.05rem);
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(2.5rem, 8vw, 6.6rem);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: 1.2rem 0 1.8rem;
+      color: rgba(255, 255, 255, .9);
+      font-size: clamp(1.04rem, 2vw, 1.28rem);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-meta li {
+      padding: .48rem .72rem;
+      border: 1px solid rgba(255, 255, 255, .28);
+      background: rgba(255, 255, 255, .12);
+      border-radius: 8px;
+      color: rgba(255, 255, 255, .92);
+      font-size: .95rem;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .section {
+      padding: clamp(3.8rem, 8vw, 7rem) clamp(1.1rem, 5vw, 5rem);
+    }
+
+    .section-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      margin: 0 0 .35rem;
+      color: var(--leaf);
+      font-size: .95rem;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: clamp(2rem, 5vw, 4.1rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 .55rem;
+      font-size: clamp(1.22rem, 2.5vw, 1.7rem);
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 1.6vw, 1.18rem);
+    }
+
+    .overview {
+      background: var(--surface);
+    }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 2.2rem;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .report-card {
+      min-height: 260px;
+      padding: clamp(1.2rem, 2.8vw, 1.8rem);
+      background: var(--surface);
+    }
+
+    .report-card strong {
+      display: block;
+      margin-bottom: .85rem;
+      color: var(--leaf-2);
+      font-size: 2.15rem;
+      line-height: 1;
+    }
+
+    .report-card p {
+      color: var(--muted);
+    }
+
+    .inquiry {
+      background: #edf3ec;
+    }
+
+    .process-line {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      min-height: 160px;
+      padding: 1.2rem;
+      border: 1px solid rgba(36, 91, 71, .25);
+      background: rgba(255, 255, 255, .72);
+      border-radius: 8px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      display: block;
+      margin-bottom: 1.8rem;
+      color: var(--sky);
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .chapter {
+      border-top: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .chapter.alt {
+      background: var(--surface);
+    }
+
+    .chapter-head {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+      gap: clamp(1.4rem, 5vw, 4rem);
+      align-items: end;
+      margin-bottom: clamp(2rem, 5vw, 4rem);
+    }
+
+    .chapter-number {
+      display: inline-flex;
+      width: 68px;
+      height: 68px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      border: 2px solid var(--leaf-2);
+      border-radius: 8px;
+      color: var(--leaf-2);
+      font-weight: 900;
+      font-size: 1.15rem;
+    }
+
+    .chapter-copy {
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .feature-media {
+      position: sticky;
+      top: 86px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      background: #10241f;
+    }
+
+    .feature-media img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .feature-media figcaption,
+    .caption {
+      padding: .85rem 1rem;
+      background: var(--leaf-2);
+      color: rgba(255, 255, 255, .9);
+      font-size: .95rem;
+    }
+
+    .notes {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .note {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 1.2rem;
+    }
+
+    .note p {
+      color: var(--muted);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .gallery-button {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      color: inherit;
+      cursor: zoom-in;
+      overflow: hidden;
+      text-align: left;
+      font: inherit;
+    }
+
+    .gallery-button img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform .28s ease;
+    }
+
+    .gallery-button:hover img,
+    .gallery-button:focus img {
+      transform: scale(1.035);
+    }
+
+    .gallery-button:focus {
+      outline: 3px solid rgba(78, 147, 181, .45);
+      outline-offset: 2px;
+    }
+
+    .gallery-button span {
+      display: block;
+      min-height: 3.5rem;
+      padding: .65rem .75rem .75rem;
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.45;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .media-panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .media-panel video,
+    .media-panel img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #101a18;
+      object-fit: cover;
+    }
+
+    .media-panel .caption {
+      background: var(--surface);
+      color: var(--muted);
+    }
+
+    .quote-band {
+      margin-top: 1.2rem;
+      padding: clamp(1.2rem, 3vw, 2rem);
+      border-left: 6px solid var(--gold);
+      background: #fff9e8;
+      color: #4d4230;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-weight: 700;
+    }
+
+    .screenshot {
+      object-fit: contain !important;
+      background: #f4f6f7;
+    }
+
+    .closing {
+      background: var(--leaf-2);
+      color: #fff;
+    }
+
+    .closing-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: clamp(1.4rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    .closing .section-kicker,
+    .closing .lead {
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .takeaways {
+      display: grid;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .takeaways li {
+      padding: 1rem 0 1rem 1.15rem;
+      border-left: 4px solid var(--moss);
+      color: rgba(255, 255, 255, .86);
+    }
+
+    .resources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1.6rem;
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .65rem .85rem;
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .resource-link:hover,
+    .resource-link:focus {
+      background: rgba(255, 255, 255, .1);
+      outline: none;
+    }
+
+    footer {
+      padding: 1.2rem clamp(1.2rem, 5vw, 5rem);
+      background: #0c2721;
+      color: rgba(255, 255, 255, .72);
+      font-size: .92rem;
+    }
+
+    .lightbox {
+      width: min(1040px, calc(100vw - 2rem));
+      max-height: calc(100vh - 2rem);
+      padding: 0;
+      border: 0;
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, .45);
+    }
+
+    .lightbox::backdrop {
+      background: rgba(9, 22, 20, .72);
+      backdrop-filter: blur(5px);
+    }
+
+    .lightbox img {
+      width: 100%;
+      max-height: calc(100vh - 10rem);
+      object-fit: contain;
+      background: #0f1715;
+    }
+
+    .lightbox-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .8rem 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .lightbox-title {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .close-button {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    @media (max-width: 980px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .55rem;
+      }
+
+      .report-grid,
+      .process-line {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .chapter-head,
+      .evidence-grid,
+      .closing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-media {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        min-height: 76svh;
+        padding-top: 4rem;
+      }
+
+      .hero-meta li {
+        width: 100%;
+      }
+
+      .report-grid,
+      .process-line,
+      .gallery,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .report-card {
+        min-height: auto;
+      }
+
+      .chapter-number {
+        width: 58px;
+        height: 58px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">跳到主要內容</a>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">自</span>
+      <span>自然領域成果分享</span>
+    </div>
+    <nav class="nav" aria-label="頁面章節">
+      <a href="#overview">主軸</a>
+      <a href="#inquiry">探究歷程</a>
+      <a href="#chapter-1">素養備課</a>
+      <a href="#chapter-2">趣味競賽</a>
+      <a href="#chapter-3">NotebookLM</a>
+      <a href="#chapter-4">自主學習</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="top" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <p class="eyebrow">雙蓮國小 114 學年度自然科領域備課社群</p>
+        <h1 id="page-title">2026.09.23 自然領域成果分享報告</h1>
+        <p class="hero-copy">以共同備課為起點，串起觀察實作、科學趣味競賽、NotebookLM 教材整理與數位自主學習，呈現自然科教學從設計到實施的完整歷程。</p>
+        <ul class="hero-meta" aria-label="報告資訊">
+          <li>陳冠百</li>
+          <li>自然科領域備課社群</li>
+          <li>4 個主題章節</li>
+          <li>15 張成果簡報</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section overview" id="overview" aria-labelledby="overview-title">
+      <div class="section-inner">
+        <p class="section-kicker">報告主軸</p>
+        <h2 id="overview-title">從共備討論走進可操作的自然課</h2>
+        <p class="lead">這份歷程網頁沿用 Learning Portfolio 的整理方式，以時間、主題、證據與反思並陳。每個章節都保留現場照片、學生作品或平台畫面，讓教學設計的脈絡可以被看見。</p>
+        <div class="report-grid" aria-label="四個成果主題">
+          <article class="report-card">
+            <strong>01</strong>
+            <h3>素養導向備課</h3>
+            <p>透過共同備課交流，回扣十二年國教素養精神，討論自然科知識如何透過情境、脈絡、動機、歷程、方法與活用幫助學生學習。</p>
+          </article>
+          <article class="report-card">
+            <strong>02</strong>
+            <h3>科學趣味競賽</h3>
+            <p>學生理解彈力原理後設計投石器，從課堂實作延伸到年級競賽，讓科學概念在動手做與公開展示中被驗證。</p>
+          </article>
+          <article class="report-card">
+            <strong>03</strong>
+            <h3>NotebookLM 教材應用</h3>
+            <p>以主題式課程內容延伸自然課學習，整理資料、分類架構與心智圖，讓教材更容易檢索、對話與再設計。</p>
+          </article>
+          <article class="report-card">
+            <strong>04</strong>
+            <h3>自主學習與數位資源</h3>
+            <p>搭配線上學習平台與 AI 學習夥伴，補強課後學習環境，也讓學生能依照自己的節奏預習、複習與補強。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section inquiry" id="inquiry" aria-labelledby="inquiry-title">
+      <div class="section-inner">
+        <p class="section-kicker">探究教學歷程</p>
+        <h2 id="inquiry-title">觀察、提問、討論、假設、實驗、紀錄</h2>
+        <p class="lead">課堂設計不只停在知識傳遞，而是讓學生在具體情境中看見問題，提出想法，再用實驗與紀錄回到科學證據。</p>
+        <div class="process-line" aria-label="探究教學六個步驟">
+          <div class="step"><h3>觀察</h3><p>從校園植物、材料變化與活動現場切入。</p></div>
+          <div class="step"><h3>提問</h3><p>把生活中看到的現象轉成可討論的問題。</p></div>
+          <div class="step"><h3>討論</h3><p>蒐集資料並交換不同組別的想法。</p></div>
+          <div class="step"><h3>假設</h3><p>說明可能原因，準備用實作來驗證。</p></div>
+          <div class="step"><h3>實驗</h3><p>操作、測試、調整，讓抽象概念具體化。</p></div>
+          <div class="step"><h3>紀錄</h3><p>保留過程證據，回看學習與教學安排。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="chapter-1" aria-labelledby="chapter-1-title">
+      <div class="section-inner">
+        <div class="chapter-head">
+          <div>
+            <span class="chapter-number">01</span>
+            <p class="section-kicker">素養導向備課與教學</p>
+            <h2 id="chapter-1-title">把自然科概念放回真實情境</h2>
+          </div>
+          <p class="chapter-copy">社群備課從課程目標、探究流程與學生操作需求出發，連結物體受熱膨脹、科展實驗、種菜觀察等學習素材。學生在活動中不只接收知識，也練習觀察、描述、驗證與整理。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <figure class="feature-media">
+            <img src="assets/hero-experiment.jpg" alt="學生圍在實驗桌旁觀察物體受熱膨脹實驗" loading="lazy">
+            <figcaption>物體受熱膨脹實驗：從現象觀察回到概念理解。</figcaption>
+          </figure>
+          <div>
+            <div class="notes">
+              <article class="note">
+                <h3>共備紀錄延續整學年</h3>
+                <p>資料夾保留 114 上、下學期多次備課紀錄與簽到資料，呈現社群在不同階段持續討論課程安排。</p>
+              </article>
+              <article class="note">
+                <h3>實作讓概念可被觀察</h3>
+                <p>物體受熱膨脹、科展紙飛機與種菜觀察，都讓學生透過看得見的變化理解自然科概念。</p>
+              </article>
+              <article class="note">
+                <h3>學習證據回到教學調整</h3>
+                <p>照片、學習紀錄與活動成果能幫助教師回看學生理解狀況，再調整下一次教學設計。</p>
+              </article>
+            </div>
+            <div class="gallery" aria-label="素養導向備課與教學照片">
+              <button class="gallery-button" type="button" data-full="assets/prep-record.jpg" data-title="備課社群簽到與紀錄">
+                <img src="assets/prep-record.jpg" alt="自然領域備課社群簽到表" loading="lazy">
+                <span>備課社群簽到與紀錄</span>
+              </button>
+              <button class="gallery-button" type="button" data-full="assets/heat-team.jpg" data-title="物體受熱膨脹實驗操作">
+                <img src="assets/heat-team.jpg" alt="學生分組進行物體受熱膨脹實驗" loading="lazy">
+                <span>分組觀察與實驗操作</span>
+              </button>
+              <button class="gallery-button" type="button" data-full="assets/science-plane.jpg" data-title="科展紙飛機實驗">
+                <img src="assets/science-plane.jpg" alt="學生展示紙飛機科展實驗作品" loading="lazy">
+                <span>科展實驗與作品測試</span>
+              </button>
+              <button class="gallery-button" type="button" data-full="assets/garden-team.jpg" data-title="種菜觀察實作">
+                <img src="assets/garden-team.jpg" alt="學生在校園菜圃旁進行觀察" loading="lazy">
+                <span>校園種菜觀察實作</span>
+              </button>
+              <button class="gallery-button" type="button" data-full="assets/garden-detail.jpg" data-title="植物生長細節觀察">
+                <img src="assets/garden-detail.jpg" alt="校園植物與花朵特寫" loading="lazy">
+                <span>植物生長細節紀錄</span>
+              </button>
+              <button class="gallery-button" type="button" data-full="assets/garden-tablet.jpg" data-title="平板輔助觀察紀錄">
+                <img src="assets/garden-tablet.jpg" alt="學生用平板輔助植物觀察" loading="lazy">
+                <span>平板輔助觀察與紀錄</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter alt" id="chapter-2" aria-labelledby="chapter-2-title">
+      <div class="section-inner">
+        <div class="chapter-head">
+          <div>
+            <span class="chapter-number">02</span>
+            <p class="section-kicker">科學趣味競賽的籌備與施行</p>
+            <h2 id="chapter-2-title">彈力原理變成投石器挑戰</h2>
+          </div>
+          <p class="chapter-copy">各年級以彈力設計投石器，舉辦投石器競賽。學生理解物體發生彈性形變後，為了恢復原狀而對接觸的物體施加力，再把這個原理轉成可測試的作品。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <figure class="feature-media">
+            <img src="assets/competition-venue.jpg" alt="學生在體育館參與投石器趣味競賽" loading="lazy">
+            <figcaption>趣味競賽活動現場：學生把課堂中的彈力概念帶到公開挑戰。</figcaption>
+          </figure>
+          <div>
+            <div class="notes">
+              <article class="note">
+                <h3>STEAM 精神</h3>
+                <p>活動結合科學、技術、工程、藝術與數學，讓跨領域、動手做、生活應用、解決問題與五感學習同時發生。</p>
+              </article>
+              <article class="note">
+                <h3>從練習到競賽</h3>
+                <p>課堂實作先讓學生熟悉材料與發射方式，再進入全體競賽，學生能看見設計差異帶來的效果。</p>
+              </article>
+            </div>
+            <div class="two-col" aria-label="科學趣味競賽照片與影片">
+              <article class="media-panel">
+                <video controls preload="metadata" poster="assets/class-practice.jpg">
+                  <source src="assets/practice.mp4" type="video/mp4">
+                  你的瀏覽器不支援影片播放。
+                </video>
+                <p class="caption">課堂實作與練習</p>
+              </article>
+              <article class="media-panel">
+                <video controls preload="metadata" poster="assets/competition-launch.jpg">
+                  <source src="assets/competition.mp4" type="video/mp4">
+                  你的瀏覽器不支援影片播放。
+                </video>
+                <p class="caption">科學趣味競賽舉辦現場</p>
+              </article>
+              <button class="gallery-button" type="button" data-full="assets/competition-launch.jpg" data-title="投石器競賽發射現場">
+                <img src="assets/competition-launch.jpg" alt="學生操作投石器進行競賽" loading="lazy">
+                <span>學生操作投石器</span>
+              </button>
+              <button class="gallery-button" type="button" data-full="assets/competition-crowd.jpg" data-title="年級共同參與趣味競賽">
+                <img src="assets/competition-crowd.jpg" alt="學生在體育館集合參與科學趣味競賽" loading="lazy">
+                <span>年級共同參與活動</span>
+              </button>
+            </div>
+            <div class="quote-band">素養指人在適應現在生活和面對未來挑戰時，所應具備的知識、能力和態度。投石器競賽把這句話放進學生能動手驗證的情境。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter" id="chapter-3" aria-labelledby="chapter-3-title">
+      <div class="section-inner">
+        <div class="chapter-head">
+          <div>
+            <span class="chapter-number">03</span>
+            <p class="section-kicker">NotebookLM 在自然科教材設計與應用</p>
+            <h2 id="chapter-3-title">把主題資料整理成可討論的教材</h2>
+          </div>
+          <p class="chapter-copy">自然課實務操作常需要延伸課本內容。NotebookLM 可協助整理水生植物分類、產生摘要與心智圖，讓教師更快把資料轉成學生能閱讀、比較與提問的教材。</p>
+        </div>
+
+        <div class="two-col">
+          <button class="gallery-button" type="button" data-full="assets/notebook-classification.png" data-title="水生植物分類資料整理">
+            <img class="screenshot" src="assets/notebook-classification.png" alt="NotebookLM 中水生植物分類資料整理畫面" loading="lazy">
+            <span>水生植物分類資料整理</span>
+          </button>
+          <button class="gallery-button" type="button" data-full="assets/notebook-mindmap.png" data-title="水生植物分類心智圖">
+            <img class="screenshot" src="assets/notebook-mindmap.png" alt="NotebookLM 產生的水生植物分類心智圖" loading="lazy">
+            <span>水生植物分類心智圖</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section chapter alt" id="chapter-4" aria-labelledby="chapter-4-title">
+      <div class="section-inner">
+        <div class="chapter-head">
+          <div>
+            <span class="chapter-number">04</span>
+            <p class="section-kicker">自主學習和數位學習資源應用</p>
+            <h2 id="chapter-4-title">多一把鑰匙，多一條學習路徑</h2>
+          </div>
+          <p class="chapter-copy">搭配線上學習平台，補強多元課後學習環境。因材網可支援自然科課本的預習與複習，也能降低部分個別差異造成的學習落差。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <figure class="feature-media">
+            <img src="assets/digital-aid.jpg" alt="自主學習數位資源應用簡報畫面" loading="lazy">
+            <figcaption>學習更精采，多把鑰匙不能少。</figcaption>
+          </figure>
+          <div>
+            <div class="notes">
+              <article class="note">
+                <h3>因材網支援預習與複習</h3>
+                <p>學生不受時間與空間限制，可以回家觀看實驗操作影片，延續課堂中的自然科學習。</p>
+              </article>
+              <article class="note">
+                <h3>AI 學習夥伴補強方向</h3>
+                <p>通用型與學科領域學習夥伴可輔助學習與診斷落點，提供學生自主學習使用，也幫助教師規劃補強方向。</p>
+              </article>
+            </div>
+            <div class="gallery" aria-label="自主學習與數位資源畫面">
+              <button class="gallery-button" type="button" data-full="assets/digital-platform.jpg" data-title="數位學習平台與學習夥伴畫面">
+                <img class="screenshot" src="assets/digital-platform.jpg" alt="數位學習平台與 AI 學習夥伴畫面" loading="lazy">
+                <span>數位學習平台與 AI 學習夥伴</span>
+              </button>
+              <button class="gallery-button" type="button" data-full="assets/digital-aid.jpg" data-title="自主學習資源應用簡報畫面">
+                <img src="assets/digital-aid.jpg" alt="自主學習資源應用簡報畫面" loading="lazy">
+                <span>課後學習與資源補強</span>
+              </button>
+              <button class="gallery-button" type="button" data-full="assets/hero-garden.jpg" data-title="從實作延伸到自主學習">
+                <img src="assets/hero-garden.jpg" alt="學生在菜圃進行自然觀察" loading="lazy">
+                <span>從課堂實作延伸到自主學習</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section closing" aria-labelledby="closing-title">
+      <div class="section-inner closing-grid">
+        <div>
+          <p class="section-kicker">成果回看</p>
+          <h2 id="closing-title">社群共備讓教學歷程留下清楚足跡</h2>
+          <p class="lead">這份成果分享把資料夾中的照片、影片、簡報重點重新編排成可瀏覽的歷程。從共同備課到學生實作，再到 AI 與數位資源應用，每個章節都保留可以回看、展示與再討論的證據。</p>
+          <div class="resources">
+            <a class="resource-link" href="2026.09.23自然科領域備課社群成果分享簡報.pptx">開啟原始成果簡報</a>
+            <a class="resource-link" href="#top">回到頁首</a>
+          </div>
+        </div>
+        <ul class="takeaways">
+          <li>共同備課協助教師對齊素養導向，讓課程目標、情境設計與學生操作彼此連接。</li>
+          <li>趣味競賽把彈力原理轉為可觀察、可測試、可修正的作品設計。</li>
+          <li>NotebookLM 與數位學習平台提供教材整理、自主學習與補強學習的新入口。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    2026.09.23 自然領域成果分享報告｜陳冠百｜雙蓮國小自然科領域備課社群
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="圖片放大檢視">
+    <img id="lightbox-image" alt="">
+    <div class="lightbox-bar">
+      <p class="lightbox-title" id="lightbox-title"></p>
+      <button class="close-button" type="button" aria-label="關閉圖片">×</button>
+    </div>
+  </dialog>
+
+  <script>
+    const lightbox = document.querySelector("#lightbox");
+    const lightboxImage = document.querySelector("#lightbox-image");
+    const lightboxTitle = document.querySelector("#lightbox-title");
+    const closeButton = document.querySelector(".close-button");
+
+    document.querySelectorAll(".gallery-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        lightboxImage.src = button.dataset.full;
+        lightboxImage.alt = button.querySelector("img")?.alt || "";
+        lightboxTitle.textContent = button.dataset.title || "";
+        if (typeof lightbox.showModal === "function") {
+          lightbox.showModal();
+        } else {
+          lightbox.setAttribute("open", "");
+        }
+      });
+    });
+
+    const closeLightbox = () => {
+      if (typeof lightbox.close === "function") {
+        lightbox.close();
+      } else {
+        lightbox.removeAttribute("open");
+      }
+    };
+
+    closeButton.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    const navLinks = [...document.querySelectorAll(".nav a")];
+    const targets = navLinks
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((link) => {
+            link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+          });
+        });
+      }, { rootMargin: "-38% 0px -55% 0px", threshold: 0 });
+
+      targets.forEach((target) => observer.observe(target));
+    }
+  </script>
+</body>
+</html>
